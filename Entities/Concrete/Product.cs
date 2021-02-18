@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Entities.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entities.Concrete
 {
     //Default Access Modifier => Internal
-    public class Product
+    public class Product : IEntity
     {
         public int ProductID { get; set; }
         public int CategoryID { get; set; }
