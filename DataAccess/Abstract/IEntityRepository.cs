@@ -6,7 +6,9 @@ using System.Text;
 namespace DataAccess.Abstract
 {
     //Generic Repository Design Pattern
-    public interface IEntityRepository<T>
+    //Generic Constraint => Generic Kısıt
+    // class => referans tip olabilir 
+    public interface IEntityRepository<T> where T : class
     {
         List<T> GetAll(Expression<Func<T, bool>> filter = null);
         T Get(Expression<Func<T, bool>> filter);
