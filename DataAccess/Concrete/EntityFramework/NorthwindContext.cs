@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccess.Abstract
+namespace DataAccess.Concrete.EntityFramework
 {
     //Context : Database tabloları ile proje classlarını bağlamak
     public class NorthwindContext : DbContext
