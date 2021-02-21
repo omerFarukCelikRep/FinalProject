@@ -12,7 +12,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //ProductTest();
+            ProductTest();
 
             //CategoryTest();
         }
@@ -56,9 +56,9 @@ namespace ConsoleUI
 
         private static void GetAllProducts(ProductManager productManager)
         {
-            foreach (Product product in productManager.GetAll())
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName + " " + product.CategoryName);
             }
         }
     }
