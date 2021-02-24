@@ -9,7 +9,7 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        List<Product> GetAll();
+        IDataResult GetAll();
         List<Product> GetAllByCategoryId(int id);
         List<Product> GetProductsByUnitPrice(decimal min, decimal max);
         List<ProductDetailDto> GetProductDetails();
