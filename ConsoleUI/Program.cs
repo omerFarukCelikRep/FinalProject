@@ -40,7 +40,7 @@ namespace ConsoleUI
 
         private static void GetProductsByUnitPrice(ProductManager productManager)
         {
-            foreach (Product product in productManager.GetProductsByUnitPrice(50, 100))
+            foreach (Product product in productManager.GetProductsByUnitPrice(50, 100).Data)
             {
                 Console.WriteLine(product.ProductName);
             }
@@ -48,7 +48,7 @@ namespace ConsoleUI
 
         private static void GetProductByCategoryId(ProductManager productManager)
         {
-            foreach (Product product in productManager.GetAllByCategoryId(2))
+            foreach (Product product in productManager.GetAllByCategoryId(2).Data)
             {
                 Console.WriteLine(product.ProductName);
             }
@@ -56,9 +56,19 @@ namespace ConsoleUI
 
         private static void GetAllProducts(ProductManager productManager)
         {
-            foreach (var product in productManager.GetProductDetails())
+            var result = productManager.GetProductDetails();
+
+
+            if (result.Success)
             {
-                Console.WriteLine(product.ProductName + " " + product.CategoryName);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + " " + product.CategoryName);
+                } 
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
             }
         }
     }
