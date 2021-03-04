@@ -38,7 +38,7 @@ namespace Business.Concrete
         public IDataResult<List<Product>> GetAll()
         {
             //İş Kodları
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 18)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MainteanceTime);
             }
